@@ -55,9 +55,12 @@ export async function onRequestPost({ request, env }) {
   });
   const data = await r.json().catch(() => ({}));
   if (!r.ok) {
+    const se = data.error || {};
     return json({
       error: "stripe_error",
       message: "Stripe refused the checkout request. Try again in a minute.",
+      stripe_code: se.code || null,
+      stripe_message: typeof se.message === "string" ? se.message.slice(0, 200) : null,
     }, 502);
   }
   return json({ url: data.url });
