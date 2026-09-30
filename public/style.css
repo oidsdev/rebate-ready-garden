@@ -25,7 +25,11 @@ p{max-width:680px}
 .card ul{margin:10px 0;padding-left:18px;font-size:14px}
 .card input[type=email]{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;margin:8px 0;font-size:15px}
 .buy-msg{font-size:13px;color:var(--acc-d);min-height:20px}
-.photo-ph{background:#f7f8f7;border:1px dashed #b9c2b6;border-radius:10px;padding:34px 20px;text-align:center;color:var(--mut);font-size:14px;margin:18px 0}
+.photo{margin:22px 0}
+.photo img{display:block;width:100%;height:auto;border-radius:10px}
+.photo figcaption{font-size:13px;color:var(--mut);margin-top:8px}
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+@media(max-width:640px){.photo-row{grid-template-columns:1fr}}
 .db-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:24px}
 .db-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
 .db-card dl{margin:8px 0;font-size:14px}
