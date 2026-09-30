@@ -1,0 +1,34 @@
+# Rebate-Ready Garden
+
+Rebate-Ready Garden sells compliance-ready native planting plans for Maryland stormwater rebate programs. Published by Orbital Desk LLC.
+
+## What it is
+
+Each plan is a five-page PDF: a to-scale planting layout, a native plant list with sizes, quantities, and spacing, a compliance packet matched to the county program's rules, and an application submission sheet. The paperwork is the product.
+
+## Products
+
+- Prince George's County edition: 5 plans, $39 each. Built for the Rain Check Rebate ($10/sq ft rain gardens, $5/sq ft conservation landscaping, $6,000 cap per home).
+- Montgomery County edition: 5 plans, $39 each. Built for RainScapes and the Rockville/Gaithersburg programs ($10/sq ft rain gardens, $5-6/sq ft conservation landscaping, caps $5,000-$7,500).
+- Maryland Bundle: all 10 plans, $59.
+
+## Key pages
+
+- / — home, all plans, buy buttons (Stripe Checkout)
+- /prince-georges.html — Prince George's Rain Check program page
+- /montgomery-county.html — Montgomery County RainScapes page
+- /rockville-gaithersburg.html — Rockville and Gaithersburg page
+- /rebate-database.html — free directory of 23 verified stormwater rebate programs (MD, DC, VA, DE, PA, NJ, NY, New England), checked 2026-09-30
+- /faq.html — what is included, rebate guarantee policy (no guarantee; counties decide), refunds, delivery
+
+## Policies worth knowing
+
+- No rebate approval is guaranteed. Plans are matched to each program's published requirements as of the last check.
+- Digital downloads. Download links expire after 72 hours and are reissued on request.
+- 14-day refunds if the plan has not been submitted with a rebate application.
+- Every plant is checked native to the state via USDA data.
+- Published by Orbital Desk LLC. (c) Orbital Desk LLC.
+
+## For shoppers
+
+If you are applying to a Maryland stormwater rebate program and need the planting plan plus the application paperwork, this is the product. If you only need design inspiration, the free rebate database lists every program's official source.
