@@ -117,6 +117,9 @@ body.paper .btn{border-radius:0;font-family:-apple-system,"Segoe UI",Roboto,sans
 body.paper .btn-outline{background:transparent;color:var(--acc-d);border:2px solid var(--acc-d);margin-left:10px}
 body.paper .btn-outline:hover{background:var(--acc-d);color:#fff}
 body.paper .fig{margin:24px auto;max-width:560px}
+body.paper .fig-lead{float:right;max-width:320px;margin:6px 0 18px 28px}
+body.paper .lead-story::after{content:"";display:block;clear:both}
+@media(max-width:640px){body.paper .fig-lead{float:none;max-width:100%;margin:20px auto}}
 body.paper .fig img{border:1px solid var(--rule);border-radius:0}
 body.paper .fig figcaption{font-size:14px;font-style:italic;color:var(--mut)}
 body.paper .fig-no{font-style:normal;font-weight:600;color:var(--ink)}
