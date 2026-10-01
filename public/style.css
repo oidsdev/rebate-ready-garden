@@ -51,3 +51,4 @@ table.facts{border-collapse:collapse;width:100%;max-width:680px;margin:16px 0;ba
 table.facts th,table.facts td{border:1px solid var(--line);padding:10px 12px;text-align:left;font-size:15px}
 table.facts th{background:#f1f4ee}
 @media(max-width:640px){h1{font-size:27px}nav a{margin-left:10px}}
+.db-state{margin-bottom:2px}.db-state+.db-grid{margin-top:12px}
