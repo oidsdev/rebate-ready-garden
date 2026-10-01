@@ -155,6 +155,15 @@ body.paper .card h3{font-family:"Playfair Display",Georgia,serif;font-size:20px}
 body.paper .card .price{font-family:"Playfair Display",Georgia,serif;font-size:22px}
 body.paper table.specs{font-size:14px}
 body.paper table.specs th{color:var(--mut)}
+body.paper .trust-strip{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0;padding:14px 0 0;border-top:1px solid var(--rule);font-size:14px;color:#3d382e}
+body.paper .trust-strip li{padding-left:22px;position:relative}
+body.paper .trust-strip li::before{content:"\2713";position:absolute;left:0;color:var(--acc-d);font-weight:700}
+body.paper .card h3{margin:6px 0 2px}
+body.paper .card .price{margin:8px 0 2px}
+body.paper table.specs{width:100%;border-collapse:collapse;margin:12px 0}
+body.paper table.specs th,body.paper table.specs td{padding:5px 0;border-top:1px solid var(--rule);text-align:left;vertical-align:top}
+body.paper table.specs th{width:38%;font-weight:600}
+body.paper .card .btn{display:block;width:100%;text-align:center;margin-top:12px}
 body.paper .sidebar-box,body.paper .notice-box{border:3px double var(--ink);background:#fffdf8;border-radius:0;padding:24px 28px;margin:40px 0}
 body.paper .box-head{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 12px;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
 body.paper .checklist{list-style:none;margin:0;padding:0}
