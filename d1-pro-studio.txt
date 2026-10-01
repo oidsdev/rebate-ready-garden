@@ -1,0 +1,16 @@
+# D1 database for Pro Studio (T1 contractor product)
+# Created 2026-10-01. Database ID — the binding is attached at deploy time via
+# `wrangler pages deploy` (Pages projects take D1 bindings from the dashboard
+# or from this file when deploying with wrangler).
+
+database_id = "063f2d9c-3547-4f2e-827a-ab3ca8995990"
+database_name = "pro-studio"
+binding = "pro_studio"
+
+# Schema (applied 2026-10-01, see migrations/001-init.sql):
+#   contractors(id, email UNIQUE, company, logo_url, license_no, phone,
+#               stripe_customer_id, plan_tier, created_at)
+#   plans(id, contractor_id, client_name, address, county, plan_type,
+#         dimensions, exposure, base_pdf, pdf_key, created_at)
+#   usage_events(id, contractor_id, plan_id, billed, created_at)
+#   auth_otps(email PK, code_hash, expires_at, attempts)
