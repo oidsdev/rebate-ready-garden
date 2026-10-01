@@ -179,3 +179,9 @@ body.paper .step{border-left:0;border-top:1px solid var(--rule);padding:18px 0}
 body.paper .step:first-child{border-top:0;padding-top:0}
 body.paper .btn-outline{margin-left:0;margin-top:10px}
 }
+
+.share-strip{background:#f4f6f4;border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:18px 0}
+.share-head{font-weight:600;margin:0 0 10px}
+.share-row{margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.share-btn{display:inline-block;background:#fff;color:var(--acc-d);border:1px solid var(--acc);padding:8px 14px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;font-family:inherit}
+.share-btn:hover{background:var(--acc);color:#fff}
