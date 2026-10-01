@@ -1,0 +1,1 @@
+{"_comment":"Copy to ~/.config/rebate-garden/reddit.json and fill in. chmod 600. NEVER commit the real file.","client_id":"PASTE_CLIENT_ID","client_secret":"PASTE_CLIENT_SECRET","password":"PASTE_REDDIT_PASSWORD","user_agent":"rebate-ready-garden outreach bot v1 by /u/PASTE_REDDIT_USERNAME","username":"PASTE_REDDIT_USERNAME"}
