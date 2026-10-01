@@ -14,12 +14,54 @@
 </div></header>
 <main class="wrap">
 <h1>Payment received.</h1>
-<p class="lede">Your download link is on its way to your email. It stays valid for 72 hours.</p>
-<p>If the email does not arrive within a few minutes, check spam, then email us with your order email and we will reissue the link.</p>
+<div id="order">
+<p class="lede">Looking up your order…</p>
+</div>
+<p class="buy-fine" id="receipt-note" style="display:none"></p>
+<p class="buy-fine">Links stay valid for 72 hours. If a link expires, email us from your order email and we will reissue it.</p>
 <p><a class="btn" href="/rebate-database.html">Browse the free rebate database meanwhile</a></p>
 </main>
 <footer class="site"><div class="wrap">
 <p>(c) Orbital Desk LLC &middot; Published by Orbital Desk LLC</p>
+<p><a href="/terms.html">Terms of Sale</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html#refunds">Refunds</a></p>
 </div></footer>
+<script>
+(function () {
+  var box = document.getElementById("order");
+  var note = document.getElementById("receipt-note");
+  var sid = new URLSearchParams(location.search).get("session_id") || "";
+  if (!sid) {
+    box.innerHTML = '<p class="lede">We could not find your order in this page address.</p>' +
+      '<p>If you paid, your Stripe receipt is proof of purchase — email us from your order email and we will send your download links.</p>';
+    return;
+  }
+  fetch("/api/order?session_id=" + encodeURIComponent(sid))
+    .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+    .then(function (res) {
+      if (!res.ok) {
+        box.innerHTML = '<p class="lede">Order lookup hit a snag.</p><p>' +
+          escapeHtml(res.d.message || "Try refreshing in a minute.") + "</p>";
+        return;
+      }
+      var items = res.d.downloads.map(function (dl) {
+        return '<p><a class="btn" href="' + escapeHtml(dl.url) + '">Download: ' +
+          escapeHtml(dl.name) + "</a></p>";
+      }).join("");
+      box.innerHTML = '<p class="lede">Your plans are ready — download below.</p>' + items;
+      if (res.d.email) {
+        note.style.display = "";
+        note.textContent = "Order email: " + res.d.email + ". A payment receipt was sent there by Stripe.";
+      }
+    })
+    .catch(function () {
+      box.innerHTML = '<p class="lede">Order lookup hit a snag.</p><p>Check your connection and refresh. If you paid, your Stripe receipt is proof of purchase.</p>';
+    });
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+})();
+</script>
 </body>
 </html>

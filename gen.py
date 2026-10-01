@@ -8,36 +8,72 @@ FN = os.path.join(ROOT, "functions")
 os.makedirs(os.path.join(PUB, "downloads"), exist_ok=True)
 
 # ---------- 1. Catalog ----------
+# MARKETS is the scalability contract: adding a market = one entry here +
+# its plans below + its PDFs in public/downloads/. No new domain, no new
+# project, no code changes. status: "live" sells, "coming_soon" shows a
+# teaser card with no buy button (checkout also rejects it server-side).
+MARKETS = [
+    {"id": "maryland", "name": "Maryland", "status": "live",
+     "program": "Prince George's Rain Check; Montgomery County RainScapes",
+     "editions": [
+         {"id": "pg", "label": "Prince George's edition"},
+         {"id": "moco", "label": "Montgomery Co. edition"},
+         {"id": "bundle", "label": "Bundle"},
+     ]},
+    {"id": "dc", "name": "District of Columbia", "status": "coming_soon",
+     "program": "RiverSmart Homes Rain Garden Rebate (DOEE)",
+     "editions": [
+         {"id": "dc", "label": "DC edition"},
+     ]},
+    {"id": "long-island", "name": "Long Island, NY", "status": "coming_soon",
+     "program": "Long Island Garden Rewards (NEIWPCC); Town of North Hempstead Native Plant Rebate",
+     "editions": [
+         {"id": "li", "label": "Long Island edition"},
+     ]},
+]
+
 PLANS = [
-    # (sku, name, edition, blurb)
-    ("pg-rain-sun", "Prince George's Rain Garden Plan — Full Sun", "pg",
+    # (sku, name, edition, market, price_cents, status, blurb)
+    ("pg-rain-sun", "Prince George's Rain Garden Plan — Full Sun", "pg", "maryland", 3900, "live",
      "Sized for the Rain Check rain garden rebate. Full-sun plant list."),
-    ("pg-rain-shade", "Prince George's Rain Garden Plan — Part Shade", "pg",
+    ("pg-rain-shade", "Prince George's Rain Garden Plan — Part Shade", "pg", "maryland", 3900, "live",
      "Sized for the Rain Check rain garden rebate. Part-shade plant list."),
-    ("pg-cons-sun", "Prince George's Conservation Landscape — Full Sun", "pg",
+    ("pg-cons-sun", "Prince George's Conservation Landscape — Full Sun", "pg", "maryland", 3900, "live",
      "Sized for the Rain Check conservation landscaping rebate."),
-    ("pg-cons-shade", "Prince George's Conservation Landscape — Part Shade", "pg",
+    ("pg-cons-shade", "Prince George's Conservation Landscape — Part Shade", "pg", "maryland", 3900, "live",
      "Sized for the Rain Check conservation landscaping rebate."),
-    ("pg-small-lot", "Prince George's Small-Lot Rain Garden", "pg",
+    ("pg-small-lot", "Prince George's Small-Lot Rain Garden", "pg", "maryland", 3900, "live",
      "Compact rain garden for smaller parcels. Rain Check sized."),
-    ("mc-rain-sun", "Montgomery County Rain Garden Plan — Full Sun", "moco",
+    ("mc-rain-sun", "Montgomery County Rain Garden Plan — Full Sun", "moco", "maryland", 3900, "live",
      "Sized for RainScapes rain garden rebates. Full-sun plant list."),
-    ("mc-rain-shade", "Montgomery County Rain Garden Plan — Part Shade", "moco",
+    ("mc-rain-shade", "Montgomery County Rain Garden Plan — Part Shade", "moco", "maryland", 3900, "live",
      "Sized for RainScapes rain garden rebates. Part-shade plant list."),
-    ("mc-cons-sun", "Montgomery County Conservation Landscape — Full Sun", "moco",
+    ("mc-cons-sun", "Montgomery County Conservation Landscape — Full Sun", "moco", "maryland", 3900, "live",
      "Sized for RainScapes conservation landscape rebates."),
-    ("mc-cons-shade", "Montgomery County Conservation Landscape — Part Shade", "moco",
+    ("mc-cons-shade", "Montgomery County Conservation Landscape — Part Shade", "moco", "maryland", 3900, "live",
      "Sized for RainScapes conservation landscape rebates."),
-    ("mc-small-lot", "Montgomery County Small-Lot Rain Garden", "moco",
+    ("mc-small-lot", "Montgomery County Small-Lot Rain Garden", "moco", "maryland", 3900, "live",
      "Compact rain garden for smaller parcels. RainScapes sized."),
+    ("dc-rain-50", "DC Rain Garden Plan — 50 sq ft", "dc", "dc", 3900, "coming_soon",
+     "Sized for the RiverSmart Homes rebate ($41/sq ft, up to $3,000). Chesapeake-watershed natives only."),
+    ("dc-rain-75", "DC Rain Garden Plan — 75 sq ft", "dc", "dc", 3900, "coming_soon",
+     "Sized for the RiverSmart Homes rebate ($41/sq ft, up to $3,000). Chesapeake-watershed natives only."),
+    ("li-rain-100", "Long Island Rain Garden Plan — 100 sq ft", "li", "long-island", 2400, "coming_soon",
+     "Sized for Long Island Garden Rewards (up to $500 in materials). NYFA-listed natives only."),
+    ("li-rain-150", "Long Island Rain Garden Plan — 150 sq ft", "li", "long-island", 2400, "coming_soon",
+     "Sized for Long Island Garden Rewards (up to $500 in materials). NYFA-listed natives only."),
+    ("li-native-100", "Long Island Native Garden Plan — 100 sq ft", "li", "long-island", 2400, "coming_soon",
+     "Sized for the North Hempstead native plant rebate (up to $350). NYFA-listed natives only."),
 ]
 catalog = []
-for sku, name, edition, blurb in PLANS:
+for sku, name, edition, market, price_cents, status, blurb in PLANS:
+    dollars = price_cents // 100
     catalog.append({
-        "sku": sku, "name": name, "edition": edition,
-        "price_cents": 3900, "price": "$39",
+        "sku": sku, "name": name, "edition": edition, "market": market,
+        "price_cents": price_cents, "price": f"${dollars}",
+        "status": status,
         "blurb": blurb,
-        "file": f"/downloads/{sku}.pdf",
+        "file": f"/downloads/{sku}.pdf" if status == "live" else None,
         "includes": [
             "To-scale planting layout",
             "Native plant list with sizes, quantities, and spacing",
@@ -47,19 +83,23 @@ for sku, name, edition, blurb in PLANS:
     })
 catalog.append({
     "sku": "md-bundle", "name": "Maryland Bundle — All 10 Plans", "edition": "bundle",
+    "market": "maryland",
     "price_cents": 5900, "price": "$59",
+    "status": "live",
     "blurb": "Every plan in both county editions. One download, ten packets.",
-    "file": None, "bundle_of": [p[0] for p in PLANS],
+    "file": None, "bundle_of": [p[0] for p in PLANS if p[5] == "live"],
     "includes": ["All 10 county-edition plans", "All compliance packets and submission sheets"],
 })
 
 with open(os.path.join(PUB, "products.json"), "w") as f:
     json.dump(catalog, f, indent=2)
+with open(os.path.join(PUB, "markets.json"), "w") as f:
+    json.dump(MARKETS, f, indent=2)
 with open(os.path.join(FN, "_catalog.js"), "w") as f:
     f.write("// Generated by gen.py — do not hand-edit.\nexport const CATALOG = ")
     f.write(json.dumps(catalog, indent=2))
     f.write(";\n")
-print("catalog:", len(catalog), "skus")
+print("catalog:", len(catalog), "skus;", len(MARKETS), "markets")
 
 # ---------- 2. Placeholder PDFs ----------
 def pdf_bytes(title):
@@ -107,6 +147,8 @@ def pdf_bytes(title):
     return out
 
 for item in catalog:
+    if item.get("status") != "live":
+        continue  # coming_soon: no placeholder, nothing to sell yet
     skus = item.get("bundle_of") or [item["sku"]]
     for sku in skus:
         p = os.path.join(PUB, "downloads", f"{sku}.pdf")

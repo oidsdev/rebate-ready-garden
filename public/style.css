@@ -25,6 +25,8 @@ p{max-width:680px}
 .card ul{margin:10px 0;padding-left:18px;font-size:14px}
 .card input[type=email]{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;margin:8px 0;font-size:15px}
 .buy-msg{font-size:13px;color:var(--acc-d);min-height:20px}
+.buy-fine{font-size:12px;color:var(--mut);margin:8px 0 0}
+.buy-fine a{color:var(--acc-d)}
 .photo{margin:22px 0}
 .photo img{display:block;width:100%;height:auto;border-radius:10px}
 .photo figcaption{font-size:13px;color:var(--mut);margin-top:8px}

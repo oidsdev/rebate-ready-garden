@@ -1,0 +1,34 @@
+[
+  {
+    "id": "maryland",
+    "name": "Maryland",
+    "status": "live",
+    "program": "Prince George's County Rain Check Rebate; Montgomery County RainScapes Rewards",
+    "editions": [
+      {
+        "id": "pg",
+        "label": "Prince George's edition"
+      },
+      {
+        "id": "bundle",
+        "label": "Bundle"
+      },
+      {
+        "id": "moco",
+        "label": "Montgomery Co. edition"
+      }
+    ]
+  },
+  {
+    "id": "dc",
+    "name": "District of Columbia",
+    "status": "live",
+    "program": "RiverSmart Homes Rain Garden Rebate (DOEE)",
+    "editions": [
+      {
+        "id": "dc",
+        "label": "DC edition"
+      }
+    ]
+  }
+]

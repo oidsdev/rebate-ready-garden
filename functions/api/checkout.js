@@ -1,4 +1,4 @@
-// POST /api/checkout — create a Stripe Checkout Session (test mode).
+// POST /api/checkout — create a Stripe Checkout Session (live).
 // Body: { sku, email }. Returns { url } to redirect the buyer to.
 // Requires env.STRIPE_SECRET_KEY; returns a clear 503 when it is unset.
 import { CATALOG } from "../_catalog.js";
@@ -15,7 +15,7 @@ export async function onRequestPost({ request, env }) {
   if (!secret) {
     return json({
       error: "stripe_not_configured",
-      message: "Payments are not live yet. Stripe test keys have not been installed on this deployment.",
+      message: "Payments are not configured on this deployment yet.",
     }, 503);
   }
   let body;
@@ -26,6 +26,9 @@ export async function onRequestPost({ request, env }) {
   const email = String(body.email || "").trim().toLowerCase();
   const item = CATALOG.find((p) => p.sku === sku);
   if (!item) return json({ error: "unknown_sku", message: "Unknown product." }, 400);
+  if (item.status !== "live") {
+    return json({ error: "not_for_sale", message: "That edition is not on sale yet." }, 400);
+  }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return json({ error: "bad_email", message: "Enter a valid email for your download link." }, 400);
   }
