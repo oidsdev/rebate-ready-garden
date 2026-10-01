@@ -38,6 +38,7 @@ INCLUDES = [
     "Native plant list with sizes, quantities, and spacing",
     "Rebate compliance packet matched to the program rules",
     "Application submission sheet",
+    "Install it yourself over a weekend, or hand the packet to any landscaper for a bid",
 ]
 
 # ---------- 1. Catalog ----------

@@ -14,7 +14,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "20 \u00d7 5 ft \u00b7 100 sq ft",
@@ -38,7 +39,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "25 \u00d7 6 ft \u00b7 150 sq ft",
@@ -62,7 +64,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "25 \u00d7 8 ft \u00b7 200 sq ft",
@@ -86,7 +89,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "25 \u00d7 10 ft \u00b7 250 sq ft",
@@ -110,7 +114,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "40 \u00d7 10 ft \u00b7 400 sq ft",
@@ -134,7 +139,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "10 \u00d7 5 ft \u00b7 50 sq ft",
@@ -158,7 +164,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "15 \u00d7 5 ft \u00b7 75 sq ft",
@@ -182,7 +189,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "20 \u00d7 5 ft \u00b7 100 sq ft",
@@ -206,7 +214,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "25 \u00d7 6 ft \u00b7 150 sq ft",
@@ -230,7 +239,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "25 \u00d7 8 ft \u00b7 200 sq ft",
@@ -254,7 +264,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "25 \u00d7 10 ft \u00b7 250 sq ft",
@@ -278,7 +289,8 @@ export const CATALOG = [
       "To-scale planting layout",
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
-      "Application submission sheet"
+      "Application submission sheet",
+      "Install it yourself over a weekend, or hand the packet to any landscaper for a bid"
     ],
     "specs": {
       "size": "40 \u00d7 10 ft \u00b7 400 sq ft",
