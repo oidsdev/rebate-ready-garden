@@ -10,84 +10,111 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/hero-monarch.jpg">
 <meta property="og:image:alt" content="Monarch butterfly with wings open on a pink coneflower">
-<link rel="stylesheet" href="/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=3">
 </head>
-<body>
+<body class="paper">
 <div class="announce"><strong>Fall is the best time to plant natives.</strong> Get your plan and your rebate application ready before the ground freezes.</div>
-<header class="site"><div class="wrap">
-<a class="brand" href="/">Rebate-Ready Garden</a>
-<nav><a href="/prince-georges.html">Prince George's</a><a href="/montgomery-county.html">Montgomery Co.</a><a href="/rockville-gaithersburg.html">Rockville/Gaithersburg</a><a href="/rebate-database.html">Free Database</a><a href="/faq.html">FAQ</a></nav>
+<header class="masthead"><div class="wrap">
+<div class="nameplate"><a href="/">The Rebate-Ready Garden</a></div>
+<div class="dateline">Maryland &middot; Washington, D.C. &middot; Virginia Editions &nbsp;&mdash;&nbsp; Hardy in Zones 6&ndash;8 &nbsp;&mdash;&nbsp; Orbital Desk LLC &nbsp;&mdash;&nbsp; Est. 2026</div>
+<nav class="paper-nav"><a href="/prince-georges.html">Prince George&rsquo;s, MD</a><a href="/montgomery-county.html">Montgomery Co., MD</a><a href="/rockville-gaithersburg.html">Rockville/Gaithersburg, MD</a><a href="/rebate-database.html">Free Database</a><a href="/faq.html">FAQ</a></nav>
 </div></header>
 <main class="wrap">
-<section class="hero">
-<h1>A finished rebate application with your name on it.</h1>
-<p class="lede">Each plan pairs a native planting layout with the compliance packet your county's rebate program asks for. Download it tonight, plant this fall, file for your rebate.</p>
+
+<section class="lead-story">
+<p class="kicker">Rebate money, explained</p>
+<h1>Did you know your county may pay you to plant a rain garden?</h1>
+<p class="deck">Rebate programs across Maryland, DC, and Virginia pay homeowners hundreds or thousands of dollars to swap lawn for native plantings &mdash; but the rules, plant lists, and paperwork stop most people before they start. Each $19.50 plan turns your county&rsquo;s program requirements into a ready-to-plant layout: the Plant-by-Numbers map, the native plant list, and the compliance packet, as an instant download.</p>
+<div class="service-box">
+<p class="service-head">Find your edition</p>
 <div class="zip-finder">
 <input id="zip" inputmode="numeric" maxlength="10" placeholder="Enter your ZIP code" aria-label="ZIP code">
 <button class="btn" onclick="findPlans()">Find my plans</button>
 </div>
 <p class="zip-msg" id="zip-msg"></p>
 <p class="zip-note">We match your ZIP to the county edition built for its rebate program. ZIP prefixes are a rough guide &mdash; confirm your county before buying.</p>
-<p class="price">$19.50 per plan with Plant-by-Numbers Map &middot; $24.50 for all five Prince George's plans &middot; instant download</p>
-<div class="btn-row"><a class="btn" href="#plans">See the plans</a> <a class="btn" href="/rebate-database.html" style="background:#fff;color:var(--acc-d);border:1px solid var(--acc)">Free rebate database</a></div>
+</div>
+<p class="price-line">$19.50 per plan with Plant-by-Numbers Map &middot; $24.50 for all five Prince George&rsquo;s plans &middot; instant download</p>
+<div class="btn-row"><a class="btn" href="#editions">See the plans</a> <a class="btn btn-outline" href="/rebate-database.html">Free rebate database</a></div>
 </section>
 
-<figure class="photo">
+<figure class="photo fig">
 <img src="/images/hero-monarch.jpg" alt="Monarch butterfly with wings open on a pink coneflower" loading="eager">
-<figcaption>Monarch on purple coneflower. Pollinator beds like this one are what the rebate programs pay for.</figcaption>
+<figcaption><span class="fig-no">Fig. 1.</span> Monarch on purple coneflower. Pollinator beds like this one are what the rebate programs pay for.</figcaption>
 </figure>
 
-<div class="pillars">
-<div class="pillar"><h3>Matched to your county's rules</h3><p>Every plan is drawn against the published requirements of one rebate program &mdash; not a generic garden plan with a rebate sticker on it.</p></div>
-<div class="pillar"><h3>Plant-by-Numbers Map</h3><p>A to-scale layout. Circled numbers match the plant list. If you can read a paint-by-numbers kit, you can plant this.</p></div>
-<div class="pillar"><h3>Nursery-available natives</h3><p>Every plant verified native to your region and buyable at a normal nursery. No specialty orders, no substitutes.</p></div>
-<div class="pillar"><h3>Rebate-Ready Guarantee</h3><p>If your plan doesn't match its program's published rules, we fix it or refund you. Your choice.</p></div>
+<section class="idea">
+<p class="kicker">The idea</p>
+<div class="rule-cols">
+<div class="rule-col"><h3>Matched to your county&rsquo;s rules</h3><p>Every plan is drawn against the published requirements of one rebate program &mdash; not a generic garden plan with a rebate sticker on it.</p></div>
+<div class="rule-col"><h3>Plant-by-Numbers Map</h3><p>A to-scale layout. Circled numbers match the plant list. If you can read a paint-by-numbers kit, you can plant this.</p></div>
+<div class="rule-col"><h3>Nursery-available natives</h3><p>Every plant verified native to your region and buyable at a normal nursery. No specialty orders, no substitutes.</p></div>
+<div class="rule-col"><h3>Rebate-Ready Guarantee</h3><p>If your plan doesn&rsquo;t match its program&rsquo;s published rules, we fix it or refund you. Your choice.</p></div>
 </div>
+</section>
 
 <section id="how">
-<h2>How it works</h2>
+<p class="kicker">How it works</p>
 <div class="steps">
-<div class="step"><h3><span class="n">1</span>Find your county</h3><p>Enter your ZIP above. We show you the plans built for your county's rebate program.</p></div>
-<div class="step"><h3><span class="n">2</span>Download your plan</h3><p>$19.50, instant PDF. The Plant-by-Numbers Map, the plant list, the compliance packet, the submission sheet.</p></div>
-<div class="step"><h3><span class="n">3</span>Plant and file</h3><p>Put the garden in this fall. Submit the packet with your rebate application.</p></div>
+<div class="step"><div class="step-no">1</div><h3>Find your county</h3><p>Enter your ZIP above. We show you the plans built for your county&rsquo;s rebate program.</p></div>
+<div class="step"><div class="step-no">2</div><h3>Download your plan</h3><p>$19.50, instant PDF. The Plant-by-Numbers Map, the plant list, the compliance packet, the submission sheet.</p></div>
+<div class="step"><div class="step-no">3</div><h3>Plant and file</h3><p>Put the garden in this fall. Submit the packet with your rebate application.</p></div>
 </div>
 </section>
 
-<section id="plans" class="edition">
+<section id="editions">
+<p class="kicker">The editions</p>
+
+<div class="state-block">
+<h2 class="state-head">Maryland</h2>
+
+<div class="locality">
 <span id="edition-pg"></span>
-<h2>Prince George's County edition</h2>
-<p>Built for the county's <a href="/prince-georges.html">Rain Check program</a>: $10 per square foot for rain gardens, $5 for conservation landscaping. These plans are drawn to its rules.</p>
+<h3>Prince George&rsquo;s County</h3>
+<p>Built for the county&rsquo;s <a href="/prince-georges.html">Rain Check program</a>: $10 per square foot for rain gardens, $5 for conservation landscaping. These plans are drawn to its rules.</p>
 <div class="grid" data-edition="pg"></div>
-</section>
+</div>
 
-<section class="edition">
-<span id="edition-moco"></span>
-<h2>Montgomery County edition</h2>
-<p>Built for <a href="/montgomery-county.html">RainScapes Rewards</a>: $10 per square foot for rain gardens, $5&ndash;$6 for conservation landscaping. Rates confirmed with the county October 1, 2026.</p>
-<div class="grid" data-edition="moco"></div>
-</section>
-
-<section>
-<h2>The bundle</h2>
-<p>All five Prince George's plans. Five compliance packets, one download. Save $73 versus buying them separately.</p>
+<div class="locality bundle-block">
+<h3>The Bundle &mdash; all five Prince George&rsquo;s plans</h3>
+<p>Five compliance packets, one download. Save $73 versus buying them separately.</p>
 <div class="grid" data-edition="bundle"></div>
-</section>
+</div>
 
-<section class="edition">
+<div class="locality">
+<span id="edition-moco"></span>
+<h3>Montgomery County</h3>
+<p>Built for <a href="/montgomery-county.html">RainScapes Rewards</a>: $10 per square foot for rain gardens, $5&ndash;$6 for conservation landscaping. Rates confirmed with the county October 1, 2026.</p>
+<p class="juris-note">In Rockville or Gaithersburg? Those cities run their own rebate programs &mdash; see the <a href="/rockville-gaithersburg.html">Rockville/Gaithersburg edition</a>. Takoma Park is excluded from the county program.</p>
+<div class="grid" data-edition="moco"></div>
+</div>
+</div>
+
+<div class="state-block">
+<h2 class="state-head">District of Columbia</h2>
+<div class="locality">
 <span id="edition-dc"></span>
-<h2>District of Columbia edition</h2>
-<p>Built for DC's RiverSmart Homes program: up to $41 per square foot for rain gardens, capped at $3,000. Chesapeake-watershed natives only.</p>
+<h3>Washington, D.C.</h3>
+<p>Built for DC&rsquo;s RiverSmart Homes program: up to $41 per square foot for rain gardens, capped at $3,000. Chesapeake-watershed natives only.</p>
 <div class="grid" data-edition="dc"></div>
+</div>
+</div>
+
+<div class="state-block">
+<h2 class="state-head">New York</h2>
+<div class="locality">
+<h3>Long Island &mdash; on hold</h3>
+<p>The Town of North Hempstead native plant rebate closed October 1, 2026, and we won&rsquo;t sell a packet tied to a closed program. A Garden Rewards edition returns when the 2027 program details land.</p>
+</div>
+</div>
 </section>
 
-<section>
-<h2>Long Island edition</h2>
-<p>On hold: the Town of North Hempstead native plant rebate closed October 1, 2026, and we won't sell a packet tied to a closed program. A Garden Rewards edition returns when the 2027 program details land.</p>
-</section>
-
-<section>
-<h2>What each plan contains</h2>
-<ul>
+<section class="sidebar-box">
+<p class="box-head">What each plan contains</p>
+<ul class="checklist">
 <li><strong>Plant-by-Numbers Map:</strong> a to-scale planting layout for your yard type and sun exposure. Circled numbers match the plant list.</li>
 <li>A native plant list with sizes, quantities, and spacing. Every plant verified native to your region.</li>
 <li>A compliance packet matched to the county program rules, so what you submit is what the program asks for.</li>
@@ -95,30 +122,30 @@
 </ul>
 </section>
 
-<section class="guarantee">
-<h2>Our Rebate-Ready Guarantee</h2>
-<p>Every plan is checked against its county program's published requirements before it goes on sale. If your plan doesn't match what the program asks for, we'll fix the plan or refund you. Your choice.</p>
-<p>One thing we can't promise: the rebate itself. The county makes that call, and no honest seller can promise it for them.</p>
+<section class="notice-box">
+<p class="box-head">Our Rebate-Ready Guarantee</p>
+<p>Every plan is checked against its county program&rsquo;s published requirements before it goes on sale. If your plan doesn&rsquo;t match what the program asks for, we&rsquo;ll fix the plan or refund you. Your choice.</p>
+<p>One thing we can&rsquo;t promise: the rebate itself. The county makes that call, and no honest seller can promise it for them.</p>
 </section>
 
 <section>
-<h2>The plants in the plans</h2>
+<p class="kicker">The plants in the plans</p>
 <p>Every plan uses nursery-available Mid-Atlantic natives. These are growing in a real native garden.</p>
 <div class="photo-row">
-<figure class="photo"><img src="/images/butterfly-weed.jpg" alt="Orange butterfly weed with daisies" loading="lazy"><figcaption>Butterfly weed, a monarch host plant.</figcaption></figure>
-<figure class="photo"><img src="/images/asters.jpg" alt="Purple New England asters in bloom" loading="lazy"><figcaption>New England asters, late-season color.</figcaption></figure>
-<figure class="photo"><img src="/images/monarch-coneflower-2.jpg" alt="Monarch butterfly feeding on coneflower" loading="lazy"><figcaption>Monarch on coneflower, again.</figcaption></figure>
+<figure class="photo fig"><img src="/images/butterfly-weed.jpg" alt="Orange butterfly weed with daisies" loading="lazy"><figcaption><span class="fig-no">Fig. 2.</span> Butterfly weed, a monarch host plant.</figcaption></figure>
+<figure class="photo fig"><img src="/images/asters.jpg" alt="Purple New England asters in bloom" loading="lazy"><figcaption><span class="fig-no">Fig. 3.</span> New England asters, late-season color.</figcaption></figure>
+<figure class="photo fig"><img src="/images/monarch-coneflower-2.jpg" alt="Monarch butterfly feeding on coneflower" loading="lazy"><figcaption><span class="fig-no">Fig. 4.</span> Monarch on coneflower, again.</figcaption></figure>
 </div>
 </section>
 
-<section class="cta">
-<h2>Not sure which program fits?</h2>
+<section class="notice-box cta-box">
+<p class="box-head">Not sure which program fits?</p>
 <p>We keep a free directory of 23 verified stormwater rebate programs across Maryland, DC, Virginia, Delaware, Pennsylvania, New Jersey, New York, and New England, with rebate rates, caps, and official sources.</p>
 <p><a class="btn" href="/rebate-database.html">Browse the free database</a></p>
 </section>
 </main>
-<footer class="site"><div class="wrap">
-<p>(c) Orbital Desk LLC &middot; Published by Orbital Desk LLC</p>
+<footer class="colophon"><div class="wrap">
+<p>&copy; 2026 Orbital Desk LLC &middot; The Rebate-Ready Garden &middot; Printable for personal use</p>
 <p><a href="/terms.html">Terms of Sale</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html#refunds">Refunds</a></p>
 <p>Digital downloads. No physical product ships.</p>
 </div></footer>

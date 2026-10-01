@@ -56,7 +56,7 @@ function renderGrid(el, edition) {
       ${specTable(p)}
       <ul>${p.includes.map((i) => `<li>${i}</li>`).join("")}</ul>
       <button class="btn" data-buy="${p.sku}">Buy ${p.price}</button>
-      <p class="buy-fine">Digital download. <a href="/terms.html#refunds">Refund policy</a> &middot; <a href="/terms.html">Terms of Sale</a>. Rebate approval is the county's decision. Your download link is emailed to you after checkout.</p>
+      <p class="buy-fine">Digital download. <a href="/terms.html#refunds">Refund policy</a> &middot; <a href="/terms.html">Terms of Sale</a>. Rebate approval is the county's decision. Your download is ready instantly on the success page after checkout.</p>
       <div class="buy-msg" data-msg="${p.sku}"></div>
     </div>`;
     })

@@ -89,7 +89,7 @@
     ],
     "specs": {
       "size": "25 \u00d7 10 ft \u00b7 250 sq ft",
-      "plants": "55 plants",
+      "plants": 60,
       "sun": "Full sun",
       "rebate": "Up to $1,250",
       "rebate_note": "$5/sq ft conservation landscaping rate"
@@ -113,7 +113,7 @@
     ],
     "specs": {
       "size": "40 \u00d7 10 ft \u00b7 400 sq ft",
-      "plants": "85 plants",
+      "plants": 89,
       "sun": "Full sun",
       "rebate": "Up to $2,000",
       "rebate_note": "$5/sq ft conservation landscaping rate"
@@ -185,7 +185,7 @@
     ],
     "specs": {
       "size": "20 \u00d7 5 ft \u00b7 100 sq ft",
-      "plants": "35 plants",
+      "plants": 40,
       "sun": "Full sun to part shade",
       "rebate": "Up to $1,000",
       "rebate_note": "$10/sq ft rain garden rate"
@@ -209,7 +209,7 @@
     ],
     "specs": {
       "size": "25 \u00d7 6 ft \u00b7 150 sq ft",
-      "plants": "50 plants",
+      "plants": 55,
       "sun": "Full sun to part shade",
       "rebate": "Up to $1,500",
       "rebate_note": "$10/sq ft rain garden rate"
@@ -233,7 +233,7 @@
     ],
     "specs": {
       "size": "25 \u00d7 8 ft \u00b7 200 sq ft",
-      "plants": "71 plants",
+      "plants": 72,
       "sun": "Full sun to part shade",
       "rebate": "Up to $2,000",
       "rebate_note": "$10/sq ft rain garden rate"
@@ -257,7 +257,7 @@
     ],
     "specs": {
       "size": "25 \u00d7 10 ft \u00b7 250 sq ft",
-      "plants": "93 plants",
+      "plants": 96,
       "sun": "Full sun",
       "rebate": "Up to $1,500",
       "rebate_note": "$5\u2013$6/sq ft conservation landscaping rate"
