@@ -42,41 +42,41 @@ function renderGrid(el, edition) {
       <div class="price">${p.price}</div>
       <p style="font-size:14px">${p.blurb}</p>
       <ul>${p.includes.map((i) => `<li>${i}</li>`).join("")}</ul>
-      <input type="email" placeholder="Email for your download link" data-email="${p.sku}" aria-label="Email for download link">
       <button class="btn" data-buy="${p.sku}">Buy ${p.price}</button>
-      <p class="buy-fine">Digital download. <a href="/terms.html#refunds">Refund policy</a> &middot; <a href="/terms.html">Terms of Sale</a>. Rebate approval is the county's decision.</p>
+      <p class="buy-fine">Digital download. <a href="/terms.html#refunds">Refund policy</a> &middot; <a href="/terms.html">Terms of Sale</a>. Rebate approval is the county's decision. Your download link is emailed to you after checkout.</p>
       <div class="buy-msg" data-msg="${p.sku}"></div>
     </div>`;
     })
     .join("");
   el.querySelectorAll("[data-buy]").forEach((b) =>
-    b.addEventListener("click", () => buy(b.dataset.buy))
+    b.addEventListener("click", () => buy(b.dataset.buy, b))
   );
 }
 
-async function buy(sku) {
-  const emailEl = document.querySelector(`[data-email="${sku}"]`);
+async function buy(sku, btn) {
   const msgEl = document.querySelector(`[data-msg="${sku}"]`);
-  const email = (emailEl.value || "").trim();
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    msgEl.textContent = "Enter a valid email. Your download link goes there.";
-    return;
-  }
-  msgEl.textContent = "Starting secure checkout…";
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = "Starting secure checkout…";
+  msgEl.textContent = "";
   try {
     const r = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sku, email }),
+      body: JSON.stringify({ sku }),
     });
     const d = await r.json();
-    if (!r.ok) {
-      msgEl.textContent = d.message || "Checkout is not available yet. Email us and we will help.";
+    if (!r.ok || !d.url) {
+      msgEl.textContent = d.message || "Checkout is not available right now. Please try again in a minute.";
+      btn.disabled = false;
+      btn.textContent = orig;
       return;
     }
     window.location.href = d.url;
   } catch (e) {
     msgEl.textContent = "Could not reach checkout. Try again in a minute.";
+    btn.disabled = false;
+    btn.textContent = orig;
   }
 }
 

@@ -23,14 +23,14 @@ export async function onRequestPost({ request, env }) {
   catch { return json({ error: "bad_request", message: "Expected JSON body." }, 400); }
 
   const sku = String(body.sku || "");
+  // Email is optional now: Stripe Checkout collects it, and the webhook
+  // falls back to customer_details.email. A prefilled email just skips typing.
   const email = String(body.email || "").trim().toLowerCase();
+  const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
   const item = CATALOG.find((p) => p.sku === sku);
   if (!item) return json({ error: "unknown_sku", message: "Unknown product." }, 400);
   if (item.status !== "live") {
     return json({ error: "not_for_sale", message: "That edition is not on sale yet." }, 400);
-  }
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    return json({ error: "bad_email", message: "Enter a valid email for your download link." }, 400);
   }
 
   const origin = new URL(request.url).origin;
@@ -40,8 +40,7 @@ export async function onRequestPost({ request, env }) {
     "line_items[0][price_data][product_data][name]": `${item.name} — Rebate-Ready Garden (Orbital Desk LLC)`,
     "line_items[0][price_data][unit_amount]": String(item.price_cents),
     "line_items[0][quantity]": "1",
-    customer_email: email,
-    client_reference_id: email,
+    ...(emailOk ? { customer_email: email, client_reference_id: email } : {}),
     "metadata[sku]": sku,
     "metadata[product]": "rebate-ready-garden",
     success_url: `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}`,
