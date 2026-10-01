@@ -106,6 +106,9 @@ body.paper .kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;
 body.paper .lead-story h1{font-family:"Playfair Display",Georgia,serif;font-weight:800;font-size:44px;line-height:1.12;margin:0 0 14px;max-width:800px}
 body.paper .deck{font-size:20px;font-style:italic;color:#3d382e;max-width:720px;line-height:1.55}
 body.paper .service-box{border:3px double var(--ink);padding:20px 24px;margin:26px 0;max-width:560px;background:#fffdf8}
+body.paper .inside-list{margin:0;padding-left:20px}
+body.paper .inside-list li{margin:0 0 10px;font-size:15px;line-height:1.55}
+body.paper .inside-list li:last-child{margin-bottom:0}
 body.paper .service-head{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 10px;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
 body.paper .zip-finder input{font-family:inherit;border:1px solid var(--ink);border-radius:0}
 body.paper .zip-msg{color:var(--acc-d)}
