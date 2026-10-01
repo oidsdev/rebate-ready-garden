@@ -34,35 +34,35 @@ MARKETS = [
 
 PLANS = [
     # (sku, name, edition, market, price_cents, status, blurb)
-    ("pg-rain-sun", "Prince George's Rain Garden Plan — Full Sun", "pg", "maryland", 3900, "live",
+    ("pg-rain-sun", "Prince George's Rain Garden Plan — Full Sun", "pg", "maryland", 1950, "live",
      "Sized for the Rain Check rain garden rebate. Full-sun plant list."),
-    ("pg-rain-shade", "Prince George's Rain Garden Plan — Part Shade", "pg", "maryland", 3900, "live",
+    ("pg-rain-shade", "Prince George's Rain Garden Plan — Part Shade", "pg", "maryland", 1950, "live",
      "Sized for the Rain Check rain garden rebate. Part-shade plant list."),
-    ("pg-cons-sun", "Prince George's Conservation Landscape — Full Sun", "pg", "maryland", 3900, "live",
+    ("pg-cons-sun", "Prince George's Conservation Landscape — Full Sun", "pg", "maryland", 1950, "live",
      "Sized for the Rain Check conservation landscaping rebate."),
-    ("pg-cons-shade", "Prince George's Conservation Landscape — Part Shade", "pg", "maryland", 3900, "live",
+    ("pg-cons-shade", "Prince George's Conservation Landscape — Part Shade", "pg", "maryland", 1950, "live",
      "Sized for the Rain Check conservation landscaping rebate."),
-    ("pg-small-lot", "Prince George's Small-Lot Rain Garden", "pg", "maryland", 3900, "live",
+    ("pg-small-lot", "Prince George's Small-Lot Rain Garden", "pg", "maryland", 1950, "live",
      "Compact rain garden for smaller parcels. Rain Check sized."),
-    ("mc-rain-sun", "Montgomery County Rain Garden Plan — Full Sun", "moco", "maryland", 3900, "live",
+    ("mc-rain-sun", "Montgomery County Rain Garden Plan — Full Sun", "moco", "maryland", 1950, "live",
      "Sized for RainScapes rain garden rebates. Full-sun plant list."),
-    ("mc-rain-shade", "Montgomery County Rain Garden Plan — Part Shade", "moco", "maryland", 3900, "live",
+    ("mc-rain-shade", "Montgomery County Rain Garden Plan — Part Shade", "moco", "maryland", 1950, "live",
      "Sized for RainScapes rain garden rebates. Part-shade plant list."),
-    ("mc-cons-sun", "Montgomery County Conservation Landscape — Full Sun", "moco", "maryland", 3900, "live",
+    ("mc-cons-sun", "Montgomery County Conservation Landscape — Full Sun", "moco", "maryland", 1950, "live",
      "Sized for RainScapes conservation landscape rebates."),
-    ("mc-cons-shade", "Montgomery County Conservation Landscape — Part Shade", "moco", "maryland", 3900, "live",
+    ("mc-cons-shade", "Montgomery County Conservation Landscape — Part Shade", "moco", "maryland", 1950, "live",
      "Sized for RainScapes conservation landscape rebates."),
-    ("mc-small-lot", "Montgomery County Small-Lot Rain Garden", "moco", "maryland", 3900, "live",
+    ("mc-small-lot", "Montgomery County Small-Lot Rain Garden", "moco", "maryland", 1950, "live",
      "Compact rain garden for smaller parcels. RainScapes sized."),
-    ("dc-rain-50", "DC Rain Garden Plan — 50 sq ft", "dc", "dc", 3900, "coming_soon",
+    ("dc-rain-50", "DC Rain Garden Plan — 50 sq ft", "dc", "dc", 1950, "coming_soon",
      "Sized for the RiverSmart Homes rebate ($41/sq ft, up to $3,000). Chesapeake-watershed natives only."),
-    ("dc-rain-75", "DC Rain Garden Plan — 75 sq ft", "dc", "dc", 3900, "coming_soon",
+    ("dc-rain-75", "DC Rain Garden Plan — 75 sq ft", "dc", "dc", 1950, "coming_soon",
      "Sized for the RiverSmart Homes rebate ($41/sq ft, up to $3,000). Chesapeake-watershed natives only."),
-    ("li-rain-100", "Long Island Rain Garden Plan — 100 sq ft", "li", "long-island", 2400, "coming_soon",
+    ("li-rain-100", "Long Island Rain Garden Plan — 100 sq ft", "li", "long-island", 1200, "coming_soon",
      "Sized for Long Island Garden Rewards (up to $500 in materials). NYFA-listed natives only."),
-    ("li-rain-150", "Long Island Rain Garden Plan — 150 sq ft", "li", "long-island", 2400, "coming_soon",
+    ("li-rain-150", "Long Island Rain Garden Plan — 150 sq ft", "li", "long-island", 1200, "coming_soon",
      "Sized for Long Island Garden Rewards (up to $500 in materials). NYFA-listed natives only."),
-    ("li-native-100", "Long Island Native Garden Plan — 100 sq ft", "li", "long-island", 2400, "coming_soon",
+    ("li-native-100", "Long Island Native Garden Plan — 100 sq ft", "li", "long-island", 1200, "coming_soon",
      "Sized for the North Hempstead native plant rebate (up to $350). NYFA-listed natives only."),
 ]
 catalog = []
@@ -206,7 +206,7 @@ page = f"""<!DOCTYPE html>
 </div>
 <section class="cta">
 <h2>Applying to a Maryland program?</h2>
-<p>Our compliance-ready planting plans include the layout, the native plant list, and the application packet your county asks for. $39 per plan.</p>
+<p>Our compliance-ready planting plans include the layout, the native plant list, and the application packet your county asks for. $19.50 per plan.</p>
 <p><a class="btn" href="/">See the plans</a></p>
 </section>
 </main>
