@@ -63,3 +63,29 @@ table.facts th{background:#f1f4ee}
 .drop-local{display:block;font-size:13px;color:var(--ink);text-decoration:none;padding:2px 0 2px 14px}
 .drop-local:hover{color:var(--acc)}
 .db-state,.db-card{scroll-margin-top:76px}
+
+/* Homepage professionalization (2026-10-01) */
+.announce{background:var(--acc-d);color:#fff;text-align:center;font-size:14px;padding:9px 14px}
+.announce strong{font-weight:700}
+table.specs{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px}
+table.specs th,table.specs td{border-top:1px solid var(--line);padding:7px 4px;text-align:left;vertical-align:top}
+table.specs tr:first-child th,table.specs tr:first-child td{border-top:0}
+table.specs th{color:var(--mut);font-weight:600;width:38%;padding-right:8px}
+.rebate-note{display:block;font-size:12px;color:var(--mut);font-weight:400}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:26px 0}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.pillar h3{font-size:15px;margin:0 0 6px;color:var(--acc-d)}
+.pillar p{font-size:13.5px;color:var(--mut);margin:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0 8px;counter-reset:step}
+.step{background:#f4f6f4;border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.step h3{font-size:15px;margin:0 0 6px}
+.step h3 .n{display:inline-block;background:var(--acc);color:#fff;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;margin-right:8px}
+.step p{font-size:13.5px;color:var(--mut);margin:0}
+.zip-finder{display:flex;gap:10px;margin:16px 0 6px;max-width:440px}
+.zip-finder input{flex:1;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px}
+.zip-finder .btn{white-space:nowrap}
+.zip-msg{font-size:14px;color:var(--acc-d);min-height:22px;margin:4px 0}
+.zip-note{font-size:12.5px;color:var(--mut)}
+.guarantee{background:#f4f6f4;border:1px solid var(--line);border-radius:12px;padding:26px 28px;margin:34px 0}
+.guarantee h2{margin-top:0}
+.edition{scroll-margin-top:20px}

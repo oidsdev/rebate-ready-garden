@@ -19,6 +19,18 @@ function editionLabel(p) {
   return editionLabels[p.edition] || p.edition;
 }
 
+function specTable(p) {
+  if (!p.specs) return "";
+  const s = p.specs;
+  return `
+      <table class="specs">
+        <tr><th scope="row">Size</th><td>${s.size}</td></tr>
+        <tr><th scope="row">Plants</th><td>${s.plants}</td></tr>
+        <tr><th scope="row">Sun</th><td>${s.sun}</td></tr>
+        <tr><th scope="row">Rebate value</th><td><strong>${s.rebate}</strong> <span class="rebate-note">${s.rebate_note}</span></td></tr>
+      </table>`;
+}
+
 function renderGrid(el, edition) {
   const items = catalog.filter((p) => p.edition === edition || (edition === "all" && true));
   el.innerHTML = items
@@ -41,6 +53,7 @@ function renderGrid(el, edition) {
       <h3>${p.name}</h3>
       <div class="price">${p.price}</div>
       <p style="font-size:14px">${p.blurb}</p>
+      ${specTable(p)}
       <ul>${p.includes.map((i) => `<li>${i}</li>`).join("")}</ul>
       <button class="btn" data-buy="${p.sku}">Buy ${p.price}</button>
       <p class="buy-fine">Digital download. <a href="/terms.html#refunds">Refund policy</a> &middot; <a href="/terms.html">Terms of Sale</a>. Rebate approval is the county's decision. Your download link is emailed to you after checkout.</p>

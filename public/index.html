@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rebate-Ready Garden Plans: Native Planting Plans with the Rebate Application Packet | Orbital Desk LLC</title>
-<meta name="description" content="Compliance-ready native planting plans for Maryland and DC stormwater rebates. Each plan ships with the to-scale layout, the native plant list, and the rebate application packet your program asks for. $19.50 per plan, $24.50 for the five-plan Prince George's bundle.">
+<meta name="description" content="Native planting plans matched to county stormwater rebate programs. Each $19.50 plan includes a Plant-by-Numbers layout map, the native plant list, and the rebate compliance packet your program asks for. Instant download.">
 <meta property="og:title" content="Rebate-Ready Garden Plans">
-<meta property="og:description" content="The planting layout plus the rebate application packet, ready to submit. Maryland stormwater rebates, $19.50 per plan.">
+<meta property="og:description" content="The planting layout plus the rebate application packet, ready to submit. $19.50 per plan, instant download.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/hero-monarch.jpg">
 <meta property="og:image:alt" content="Monarch butterfly with wings open on a pink coneflower">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<div class="announce"><strong>Fall is the best time to plant natives.</strong> Get your plan and your rebate application ready before the ground freezes.</div>
 <header class="site"><div class="wrap">
 <a class="brand" href="/">Rebate-Ready Garden</a>
 <nav><a href="/prince-georges.html">Prince George's</a><a href="/montgomery-county.html">Montgomery Co.</a><a href="/rockville-gaithersburg.html">Rockville/Gaithersburg</a><a href="/rebate-database.html">Free Database</a><a href="/faq.html">FAQ</a></nav>
@@ -20,8 +21,14 @@
 <main class="wrap">
 <section class="hero">
 <h1>A finished rebate application with your name on it.</h1>
-<p class="lede">Planting plan, compliance packet, and the application itself. Done for you and matched to your program's rules. You just fill in your details and file it. Prince George's County pays up to $6,000 per home for rain gardens and native plantings; DC pays up to $3,000. The garden design is the easy part. The application is the product.</p>
-<p class="price">$19.50 per plan &middot; $24.50 for all five Prince George's plans &middot; instant download</p>
+<p class="lede">Each plan pairs a native planting layout with the compliance packet your county's rebate program asks for. Download it tonight, plant this fall, file for your rebate.</p>
+<div class="zip-finder">
+<input id="zip" inputmode="numeric" maxlength="10" placeholder="Enter your ZIP code" aria-label="ZIP code">
+<button class="btn" onclick="findPlans()">Find my plans</button>
+</div>
+<p class="zip-msg" id="zip-msg"></p>
+<p class="zip-note">We match your ZIP to the county edition built for its rebate program. ZIP prefixes are a rough guide &mdash; confirm your county before buying.</p>
+<p class="price">$19.50 per plan with Plant-by-Numbers Map &middot; $24.50 for all five Prince George's plans &middot; instant download</p>
 <div class="btn-row"><a class="btn" href="#plans">See the plans</a> <a class="btn" href="/rebate-database.html" style="background:#fff;color:var(--acc-d);border:1px solid var(--acc)">Free rebate database</a></div>
 </section>
 
@@ -30,27 +37,46 @@
 <figcaption>Monarch on purple coneflower. Pollinator beds like this one are what the rebate programs pay for.</figcaption>
 </figure>
 
-<section id="plans">
+<div class="pillars">
+<div class="pillar"><h3>Matched to your county's rules</h3><p>Every plan is drawn against the published requirements of one rebate program &mdash; not a generic garden plan with a rebate sticker on it.</p></div>
+<div class="pillar"><h3>Plant-by-Numbers Map</h3><p>A to-scale layout. Circled numbers match the plant list. If you can read a paint-by-numbers kit, you can plant this.</p></div>
+<div class="pillar"><h3>Nursery-available natives</h3><p>Every plant verified native to your region and buyable at a normal nursery. No specialty orders, no substitutes.</p></div>
+<div class="pillar"><h3>Rebate-Ready Guarantee</h3><p>If your plan doesn't match its program's published rules, we fix it or refund you. Your choice.</p></div>
+</div>
+
+<section id="how">
+<h2>How it works</h2>
+<div class="steps">
+<div class="step"><h3><span class="n">1</span>Find your county</h3><p>Enter your ZIP above. We show you the plans built for your county's rebate program.</p></div>
+<div class="step"><h3><span class="n">2</span>Download your plan</h3><p>$19.50, instant PDF. The Plant-by-Numbers Map, the plant list, the compliance packet, the submission sheet.</p></div>
+<div class="step"><h3><span class="n">3</span>Plant and file</h3><p>Put the garden in this fall. Submit the packet with your rebate application.</p></div>
+</div>
+</section>
+
+<section id="plans" class="edition">
+<span id="edition-pg"></span>
 <h2>Prince George's County edition</h2>
-<p>Built for the <a href="/prince-georges.html">Rain Check Rebate</a>: $10/sq ft for rain gardens, $5/sq ft for conservation landscaping, up to $6,000 per home.</p>
+<p>Built for the county's <a href="/prince-georges.html">Rain Check program</a>: $10 per square foot for rain gardens, $5 for conservation landscaping. These plans are drawn to its rules.</p>
 <div class="grid" data-edition="pg"></div>
 </section>
 
-<section>
+<section class="edition">
+<span id="edition-moco"></span>
 <h2>Montgomery County edition</h2>
-<p>Built for <a href="/montgomery-county.html">RainScapes Rewards</a>: $10/sq ft for rain gardens, $5–$6/sq ft for conservation landscaping, up to $7,500 per home. Rates confirmed with the county October 1, 2026.</p>
+<p>Built for <a href="/montgomery-county.html">RainScapes Rewards</a>: $10 per square foot for rain gardens, $5&ndash;$6 for conservation landscaping. Rates confirmed with the county October 1, 2026.</p>
 <div class="grid" data-edition="moco"></div>
 </section>
 
 <section>
 <h2>The bundle</h2>
-<p>All five Prince George's plans. Five compliance packets, one download.</p>
+<p>All five Prince George's plans. Five compliance packets, one download. Save $73 versus buying them separately.</p>
 <div class="grid" data-edition="bundle"></div>
 </section>
 
-<section>
+<section class="edition">
+<span id="edition-dc"></span>
 <h2>District of Columbia edition</h2>
-<p>Built for the RiverSmart Homes rain garden rebate: up to $41 per square foot, capped at $3,000. Chesapeake-watershed natives only.</p>
+<p>Built for DC's RiverSmart Homes program: up to $41 per square foot for rain gardens, capped at $3,000. Chesapeake-watershed natives only.</p>
 <div class="grid" data-edition="dc"></div>
 </section>
 
@@ -62,12 +88,17 @@
 <section>
 <h2>What each plan contains</h2>
 <ul>
-<li>A to-scale planting layout for your yard type and sun exposure.</li>
+<li><strong>Plant-by-Numbers Map:</strong> a to-scale planting layout for your yard type and sun exposure. Circled numbers match the plant list.</li>
 <li>A native plant list with sizes, quantities, and spacing. Every plant verified native to your region.</li>
 <li>A compliance packet matched to the county program rules, so what you submit is what the program asks for.</li>
 <li>An application submission sheet.</li>
 </ul>
-<p>We do not guarantee your rebate will be approved. Counties make the final call. What we guarantee is that your application will be complete.</p>
+</section>
+
+<section class="guarantee">
+<h2>Our Rebate-Ready Guarantee</h2>
+<p>Every plan is checked against its county program's published requirements before it goes on sale. If your plan doesn't match what the program asks for, we'll fix the plan or refund you. Your choice.</p>
+<p>One thing we can't promise: the rebate itself. The county makes that call, and no honest seller can promise it for them.</p>
 </section>
 
 <section>
@@ -80,7 +111,7 @@
 </div>
 </section>
 
-<section>
+<section class="cta">
 <h2>Not sure which program fits?</h2>
 <p>We keep a free directory of 23 verified stormwater rebate programs across Maryland, DC, Virginia, Delaware, Pennsylvania, New Jersey, New York, and New England, with rebate rates, caps, and official sources.</p>
 <p><a class="btn" href="/rebate-database.html">Browse the free database</a></p>
@@ -91,6 +122,22 @@
 <p><a href="/terms.html">Terms of Sale</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html#refunds">Refunds</a></p>
 <p>Digital downloads. No physical product ships.</p>
 </div></footer>
-<script src="/buy.js?v=2"></script>
+<script src="/buy.js?v=3"></script>
+<script>
+const ZIPMAP={207:["edition-pg","Prince George's County"],208:["edition-moco","Montgomery County"],209:["edition-moco","Montgomery County"],200:["edition-dc","the District of Columbia"],202:["edition-dc","the District of Columbia"],203:["edition-dc","the District of Columbia"],204:["edition-dc","the District of Columbia"],205:["edition-dc","the District of Columbia"]};
+function findPlans(){
+  const v=(document.getElementById("zip").value||"").replace(/\D/g,"").slice(0,5);
+  const msg=document.getElementById("zip-msg");
+  if(v.length<5){msg.textContent="Enter your 5-digit ZIP.";return;}
+  const hit=ZIPMAP[v.slice(0,3)];
+  if(hit){
+    msg.textContent="Showing plans built for "+hit[1]+".";
+    document.getElementById(hit[0]).scrollIntoView({behavior:"smooth"});
+  }else{
+    msg.innerHTML='We do not have a county edition for that ZIP yet. <a href="/rebate-database.html">Check the free database</a> to see your local programs.';
+  }
+}
+document.getElementById("zip").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();findPlans();}});
+</script>
 </body>
 </html>

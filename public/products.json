@@ -14,7 +14,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "20 \u00d7 5 ft \u00b7 100 sq ft",
+      "plants": "22 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $1,000",
+      "rebate_note": "$10/sq ft rain garden rate"
+    }
   },
   {
     "sku": "pg-rain-150",
@@ -31,7 +38,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "25 \u00d7 6 ft \u00b7 150 sq ft",
+      "plants": "30 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $1,500",
+      "rebate_note": "$10/sq ft rain garden rate"
+    }
   },
   {
     "sku": "pg-rain-200",
@@ -48,7 +62,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "25 \u00d7 8 ft \u00b7 200 sq ft",
+      "plants": "42 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $2,000",
+      "rebate_note": "$10/sq ft rain garden rate"
+    }
   },
   {
     "sku": "pg-meadow-250",
@@ -65,7 +86,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "25 \u00d7 10 ft \u00b7 250 sq ft",
+      "plants": "55 plants",
+      "sun": "Full sun",
+      "rebate": "Up to $1,250",
+      "rebate_note": "$5/sq ft conservation landscaping rate"
+    }
   },
   {
     "sku": "pg-meadow-400",
@@ -82,7 +110,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "40 \u00d7 10 ft \u00b7 400 sq ft",
+      "plants": "85 plants",
+      "sun": "Full sun",
+      "rebate": "Up to $2,000",
+      "rebate_note": "$5/sq ft conservation landscaping rate"
+    }
   },
   {
     "sku": "dc-rain-50",
@@ -99,7 +134,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "10 \u00d7 5 ft \u00b7 50 sq ft",
+      "plants": "18 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $2,050",
+      "rebate_note": "$41/sq ft RiverSmart rate"
+    }
   },
   {
     "sku": "dc-rain-75",
@@ -116,7 +158,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "15 \u00d7 5 ft \u00b7 75 sq ft",
+      "plants": "27 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $3,000",
+      "rebate_note": "$41/sq ft rate, program cap"
+    }
   },
   {
     "sku": "mc-rain-100",
@@ -133,7 +182,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "20 \u00d7 5 ft \u00b7 100 sq ft",
+      "plants": "35 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $1,000",
+      "rebate_note": "$10/sq ft rain garden rate"
+    }
   },
   {
     "sku": "mc-rain-150",
@@ -150,7 +206,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "25 \u00d7 6 ft \u00b7 150 sq ft",
+      "plants": "50 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $1,500",
+      "rebate_note": "$10/sq ft rain garden rate"
+    }
   },
   {
     "sku": "mc-rain-200",
@@ -167,7 +230,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "25 \u00d7 8 ft \u00b7 200 sq ft",
+      "plants": "71 plants",
+      "sun": "Full sun to part shade",
+      "rebate": "Up to $2,000",
+      "rebate_note": "$10/sq ft rain garden rate"
+    }
   },
   {
     "sku": "mc-meadow-250",
@@ -184,7 +254,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "25 \u00d7 10 ft \u00b7 250 sq ft",
+      "plants": "93 plants",
+      "sun": "Full sun",
+      "rebate": "Up to $1,500",
+      "rebate_note": "$5\u2013$6/sq ft conservation landscaping rate"
+    }
   },
   {
     "sku": "mc-meadow-400",
@@ -201,7 +278,14 @@
       "Native plant list with sizes, quantities, and spacing",
       "Rebate compliance packet matched to the program rules",
       "Application submission sheet"
-    ]
+    ],
+    "specs": {
+      "size": "40 \u00d7 10 ft \u00b7 400 sq ft",
+      "plants": "146 plants",
+      "sun": "Full sun",
+      "rebate": "Up to $2,400",
+      "rebate_note": "$5\u2013$6/sq ft conservation landscaping rate"
+    }
   },
   {
     "sku": "pg-bundle",
