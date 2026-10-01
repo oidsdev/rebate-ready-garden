@@ -113,7 +113,7 @@ body.paper .price-line{font-size:15px;color:var(--mut);font-style:italic}
 body.paper .btn{border-radius:0;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.02em}
 body.paper .btn-outline{background:transparent;color:var(--acc-d);border:2px solid var(--acc-d);margin-left:10px}
 body.paper .btn-outline:hover{background:var(--acc-d);color:#fff}
-body.paper .fig{margin:30px 0}
+body.paper .fig{margin:24px auto;max-width:560px}
 body.paper .fig img{border:1px solid var(--rule);border-radius:0}
 body.paper .fig figcaption{font-size:14px;font-style:italic;color:var(--mut)}
 body.paper .fig-no{font-style:normal;font-weight:600;color:var(--ink)}
