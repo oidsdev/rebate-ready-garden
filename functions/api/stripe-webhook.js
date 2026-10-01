@@ -7,8 +7,11 @@
 //
 // Idempotency: durable, via the Checkout Session's own metadata
 // (email_sent=1 written with the restricted key after a successful send),
-// plus an in-memory Set as a fast path. A retried Stripe delivery that
-// arrives after a completed send returns {duplicate:true} and sends nothing.
+// plus an in-memory Set as a fast path. The in-memory mark is only set for
+// terminally handled events — a failed or never-attempted send stays
+// retryable, so a Stripe retry always re-attempts the email until the
+// durable flag exists. A retried Stripe delivery that arrives after a
+// completed send returns {duplicate:true} and sends nothing.
 //
 // Required Pages secrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
 // DOWNLOAD_SECRET, RESEND_API_KEY. Optional: EMAIL_FROM
@@ -23,12 +26,19 @@ import {
 const seen = new Set();
 const MAX_SEEN = 5000;
 
-function remember(eventId) {
-  if (!eventId) return false;
-  if (seen.has(eventId)) return true;
+// Fast-path duplicate check. IMPORTANT: an event id is only added to `seen`
+// once it is terminally handled (sent, or a no-op). A failed email send or a
+// send that never happened (missing RESEND_API_KEY) must NOT be marked, or a
+// Stripe retry landing on this isolate would be swallowed as a duplicate
+// before the durable email_sent marker exists. The durable guard is the
+// Checkout Session metadata flag; this set is only a shortcut.
+function isSeen(eventId) {
+  return !!eventId && seen.has(eventId);
+}
+function markSeen(eventId) {
+  if (!eventId) return;
   seen.add(eventId);
   if (seen.size > MAX_SEEN) seen.delete(seen.values().next().value);
-  return false;
 }
 
 async function stripeGet(secret, path) {
@@ -122,9 +132,10 @@ export async function onRequestPost({ request, env }) {
   const obj = (event.data && event.data.object) || {};
   const eventId = String(event.id || "");
 
-  if (remember(eventId)) return json({ received: true, duplicate: true });
+  if (isSeen(eventId)) return json({ received: true, duplicate: true });
 
   if (type !== "checkout.session.completed") {
+    markSeen(eventId);
     return json({ received: true, ignored: type });
   }
 
@@ -145,10 +156,12 @@ export async function onRequestPost({ request, env }) {
   }
   const s = sess.data || {};
   if ((s.payment_status || "") !== "paid") {
+    markSeen(eventId); // terminal: a later paid state arrives as a new event
     return json({ received: true, ignored: "unpaid" });
   }
   const meta = s.metadata || {};
   if (meta.email_sent === "1") {
+    markSeen(eventId);
     return json({ received: true, duplicate: true });
   }
 
@@ -159,6 +172,7 @@ export async function onRequestPost({ request, env }) {
   const item = CATALOG.find((p) => p.sku === sku);
   if (!item || !email) {
     console.log(`webhook: ignored (sku=${sku} email=${email ? "set" : "missing"})`);
+    markSeen(eventId); // terminal: reprocessing could not succeed either
     return json({ received: true });
   }
 
@@ -175,11 +189,15 @@ export async function onRequestPost({ request, env }) {
       url: `${origin}/api/download?token=${token}`,
     });
   }
-  if (!items.length) return json({ received: true, ignored: "no_products" });
+  if (!items.length) {
+    markSeen(eventId); // terminal: nothing to email
+    return json({ received: true, ignored: "no_products" });
+  }
 
   if (!env.RESEND_API_KEY) {
     // Config not finished: don't fail the webhook (Stripe would retry
-    // forever). Log loudly so the operator wires the key.
+    // forever), and do NOT mark seen — once the key is wired, a retried
+    // delivery must still send. Log loudly so the operator wires the key.
     console.log(`webhook: RESEND_API_KEY missing — email NOT sent to ${email} (sku=${sku}). Wire the secret.`);
     return json({ received: true, email_pending: true, email, sku });
   }
@@ -197,15 +215,20 @@ export async function onRequestPost({ request, env }) {
   });
   if (!sent.ok) {
     console.log(`webhook: Resend failed (${sent.status}) for ${email}: ${JSON.stringify(sent.data).slice(0, 200)}`);
-    // Return 502 so Stripe retries; idempotency flag not set yet.
+    // Return 502 so Stripe retries; do NOT mark seen — the retry must
+    // re-attempt the send. The durable email_sent flag is still unset.
     return json({ error: "email_failed", detail: sent.data }, 502);
   }
 
-  // Durable idempotency mark.
-  await stripePostForm(env.STRIPE_SECRET_KEY,
+  // Durable idempotency mark, then the fast-path mark.
+  const marked = await stripePostForm(env.STRIPE_SECRET_KEY,
     `/checkout/sessions/${encodeURIComponent(sessionId)}`,
     { "metadata[email_sent]": "1" }
   );
+  if (!marked.ok) {
+    console.log(`webhook: WARNING — email sent to ${email} but email_sent marker write failed (${marked.status}). A retried delivery may re-send.`);
+  }
+  markSeen(eventId);
 
   console.log(`webhook: emailed ${items.length} link(s) to ${email} (sku=${sku}, resend=${sent.data.id || "ok"})`);
   return json({ received: true, emailed: true, email, items: items.length });
