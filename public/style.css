@@ -52,3 +52,14 @@ table.facts th,table.facts td{border:1px solid var(--line);padding:10px 12px;tex
 table.facts th{background:#f1f4ee}
 @media(max-width:640px){h1{font-size:27px}nav a{margin-left:10px}}
 .db-state{margin-bottom:2px}.db-state+.db-grid{margin-top:12px}
+
+.nav-drop{position:relative;display:inline-block;margin-left:14px}
+.nav-drop>a{margin-left:0;color:var(--ink);text-decoration:none;font-size:14px;cursor:pointer}
+.nav-drop>a:hover{color:var(--acc)}
+.drop-menu{display:none;position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:270px;max-height:70vh;overflow:auto;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:20}
+.nav-drop:hover .drop-menu,.nav-drop:focus-within .drop-menu{display:block}
+.drop-state{margin:10px 0}
+.drop-state>a{display:block;font-weight:700;font-size:14px;color:var(--acc-d);text-decoration:none;margin-bottom:2px}
+.drop-local{display:block;font-size:13px;color:var(--ink);text-decoration:none;padding:2px 0 2px 14px}
+.drop-local:hover{color:var(--acc)}
+.db-state,.db-card{scroll-margin-top:76px}
